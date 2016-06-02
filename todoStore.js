@@ -33,7 +33,7 @@ function todoStore(state = defaultState, action) {
 
         return Object.assign({}, state, {
             allTodos: updatedAllTodos,
-            todos: state.updatedAllTodos.filter(todo => todo.state === state.filter),
+            todos: updatedAllTodos.filter(todo => todo.state === state.filter),
         });
     case 'TOGGLE_STATE':
         const filter = state.filter === 'pending' ? 'done' : 'pending';
